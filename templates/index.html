@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>紹介サイト</title>
+</head>
+<body>
+  <h1>紹介サイト</h1>
+  <ul>
+    {% for item in items %}
+      <li><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <p><a href="/admin">管理画面へ</a></p>
+</body>
+</html>
