@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>管理画面</title>
+</head>
+<body>
+  <h1>管理画面</h1>
+  <form method="POST" enctype="multipart/form-data">
+    <p>タイトル: <input type="text" name="title" required></p>
+    <p>URL（外部リンクがある場合）: <input type="text" name="url"></p>
+    <p>ファイル: <input type="file" name="file"></p>
+    <button type="submit">追加</button>
+  </form>
+
+  <h2>登録済みアイテム</h2>
+  <ul>
+    {% for item in items %}
+      <li><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <p><a href="/">公開ページへ</a></p>
+</body>
+</html>
